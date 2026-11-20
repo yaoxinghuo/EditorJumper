@@ -107,5 +107,13 @@
     "macOpenName": "joycode",
     "supportsWorkspace": true,
     "supportsWsl": true
+  },
+  {
+    "name": "Devin",
+    "macPath": "/Applications/Devin.app/Contents/Resources/app/bin/devin-desktop",
+    "winPath": "",
+    "linuxPath": "",
+    "macOpenName": "devin",
+    "supportsWorkspace": true
   }
 ]

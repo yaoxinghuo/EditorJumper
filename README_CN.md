@@ -12,7 +12,7 @@
 
 ## 🔍 简介
 
-EditorJumper 是一个 JetBrains IDE 插件，允许您在 JetBrains IDE 和其他流行的代码编辑器（如 VS Code、Cursor、Trae、Windsurf、Void、Kiro、Qoder 和 JoyCode）之间无缝跳转。它能够保持光标位置和编辑上下文，大大提高了多编辑器环境中的开发效率。
+EditorJumper 是一个 JetBrains IDE 插件，允许您在 JetBrains IDE 和其他流行的代码编辑器（如 VS Code、Cursor、Trae、Windsurf、Void、Kiro、Qoder、JoyCode 和 Devin）之间无缝跳转。它能够保持光标位置和编辑上下文，大大提高了多编辑器环境中的开发效率。
 
 <div align="center">
   <img src="image/JumpAndBack.gif" alt="Jump and Back Demo" width="800"/>
@@ -23,7 +23,7 @@ EditorJumper 是一个 JetBrains IDE 插件，允许您在 JetBrains IDE 和其�
 ## 🌟 功能特点
 
 - 🚀 **无缝编辑器切换**
-  - 快速在 JetBrains IDE 和 VS Code、Cursor、Trae、Windsurf、Void、Kiro、Qoder、JoyCode 之间跳转
+  - 快速在 JetBrains IDE 和 VS Code、Cursor、Trae、Windsurf、Void、Kiro、Qoder、JoyCode、Devin 之间跳转
   - 自动定位到相同的光标位置（行和列）
   - 完美保持编辑上下文，不中断工作流
   - 工作空间文件支持 - 所有编辑器现在都支持多根项目的工作空间文件 (.code-workspace)
@@ -118,7 +118,7 @@ EditorJumper 是一个 JetBrains IDE 插件，允许您在 JetBrains IDE 和其�
 
 ## 🔄 配套使用
 
-> 推荐与 [EditorJumper-V](https://github.com/wanniwa/EditorJumper-V) 配合使用，以便从 Cursor、VS Code、Trae、Windsurf、Void、Kiro、Qoder、JoyCode 快速返回 JetBrains IDE
+> 推荐与 [EditorJumper-V](https://github.com/wanniwa/EditorJumper-V) 配合使用，以便从 Cursor、VS Code、Trae、Windsurf、Void、Kiro、Qoder、JoyCode、Devin 快速返回 JetBrains IDE
 
 ## 🤝 贡献
 

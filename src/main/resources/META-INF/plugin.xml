@@ -14,7 +14,7 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-        <h3>2.1.0</h3>
+        <h3>2.2.0</h3>
         <p>EditorJumper</p>
         <p>EditorJumper is a plugin that enables seamless switching between different editors, automatically opening the same project and file while preserving cursor position. This allows for instant context-aware transitions between editors:</p>
         <ul>
@@ -28,6 +28,8 @@
             <li>Jump from JetBrains IDE to CatPaw</li>
             <li>Jump from JetBrains IDE to Antigravity</li>
             <li>Jump from JetBrains IDE to CodeBuddy|CodeBuddy CN</li>
+            <li>Jump from JetBrains IDE to JoyCode</li>
+            <li>Jump from JetBrains IDE to Devin</li>
         </ul>
         <p>Smart Jump Behavior:</p>
         <ul>
@@ -126,6 +128,8 @@
             <li>从 JetBrains IDE 跳转到 CatPaw</li>
             <li>从 JetBrains IDE 跳转到 Antigravity</li>
             <li>从 JetBrains IDE 跳转到 CodeBuddy|CodeBuddy CN</li>
+            <li>从 JetBrains IDE 跳转到 JoyCode</li>
+            <li>从 JetBrains IDE 跳转到 Devin</li>
         </ul>
         <p>智能跳转行为：</p>
         <ul>
@@ -227,6 +231,11 @@
     </actions>
 
     <change-notes><![CDATA[
+    <h3>2.2.0</h3>
+    <ul>
+        <li>Added support for Devin editor (macOS).</li>
+        <li>新增对 Devin 编辑器的支持（macOS）。</li>
+    </ul>
     <h3>2.1.0</h3>
     <ul>
         <li>Added WSL remote development support (PR #47 by @Jerry-2705, idea and script by @MingSpace)</li>
