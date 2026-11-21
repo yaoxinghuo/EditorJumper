@@ -14,7 +14,7 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-        <h3>2.2.0</h3>
+        <h3>2.2.1</h3>
         <p>EditorJumper</p>
         <p>EditorJumper is a plugin that enables seamless switching between different editors, automatically opening the same project and file while preserving cursor position. This allows for instant context-aware transitions between editors:</p>
         <ul>
@@ -231,6 +231,11 @@
     </actions>
 
     <change-notes><![CDATA[
+    <h3>2.2.1</h3>
+    <ul>
+        <li>Show a clear error when a configured editor path is invalid (e.g. a URL scheme like "devin://" mistakenly entered as a path), instead of a cryptic exec failure.</li>
+        <li>当配置的编辑器路径无效时（例如把 "devin://" 这类 URL scheme 误填进路径框），给出明确提示而非晦涩的执行错误。</li>
+    </ul>
     <h3>2.2.0</h3>
     <ul>
         <li>Added support for Devin editor (macOS).</li>

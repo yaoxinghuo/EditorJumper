@@ -62,6 +62,12 @@ abstract class BaseAction : AnAction() {
         val editorType = targetEditor.ifBlank { settings.selectedEditorType }
         val customPath = settings.getPath(editorType)
 
+        // 文件路径不可能包含 "://"，出现即说明误填了 URL scheme 等非法值，所有平台都拦截
+        if (customPath.contains("://")) {
+            promptConfigureEditorPath(project, editorType, invalid = true)
+            return false
+        }
+
         // macOS: 不需要检查路径，所有编辑器都自动检测
         if (SystemInfo.isMac) {
             return true
@@ -75,26 +81,37 @@ abstract class BaseAction : AnAction() {
 
         // 其他情况: 只检查用户自定义的路径是否为空
         if (customPath.isBlank()) {
-            // 路径为空，提示用户配置
-            val result = Messages.showYesNoDialog(
-                project,
-                I18nUtils.message("dialog.editorPathNotConfigured.message", editorType),
-                I18nUtils.message("dialog.editorPathNotConfigured.title"),
-                I18nUtils.message("dialog.editorPathNotConfigured.openSettings"),
-                I18nUtils.message("dialog.editorPathNotConfigured.cancel"),
-                Messages.getWarningIcon()
-            )
-
-            if (result == Messages.YES) {
-                // 打开设置对话框
-                ShowSettingsUtil.getInstance().showSettingsDialog(
-                    project,
-                    EditorJumperSettingsConfigurable::class.java
-                )
-            }
+            promptConfigureEditorPath(project, editorType)
             return false
         }
         return true
+    }
+
+    /**
+     * 提示编辑器路径未配置或无效，确认后打开设置页
+     */
+    private fun promptConfigureEditorPath(project: Project, editorType: String, invalid: Boolean = false) {
+        val (titleKey, messageKey) = if (invalid) {
+            "dialog.editorPathInvalid.title" to "dialog.editorPathInvalid.message"
+        } else {
+            "dialog.editorPathNotConfigured.title" to "dialog.editorPathNotConfigured.message"
+        }
+        val result = Messages.showYesNoDialog(
+            project,
+            I18nUtils.message(messageKey, editorType),
+            I18nUtils.message(titleKey),
+            I18nUtils.message("dialog.editorPathNotConfigured.openSettings"),
+            I18nUtils.message("dialog.editorPathNotConfigured.cancel"),
+            Messages.getWarningIcon()
+        )
+
+        if (result == Messages.YES) {
+            // 打开设置对话框
+            ShowSettingsUtil.getInstance().showSettingsDialog(
+                project,
+                EditorJumperSettingsConfigurable::class.java
+            )
+        }
     }
 
     /**
